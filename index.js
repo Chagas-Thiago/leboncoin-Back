@@ -37,6 +37,6 @@ app.use(offerRoutes);
 //---------------------------------------------------------------------------------------------------------
 
 //demarrer le serveur
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3200, () => {
   console.log("Server started");
 });
