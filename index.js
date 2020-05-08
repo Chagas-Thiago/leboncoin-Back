@@ -17,6 +17,7 @@ app.use(cors());
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
 });
 //--------------------------------------------------------------------------
 //instalar e importer cloudinary
@@ -37,6 +38,6 @@ app.use(offerRoutes);
 //---------------------------------------------------------------------------------------------------------
 
 //demarrer le serveur
-app.listen(process.env.PORT || 3200, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server started");
 });

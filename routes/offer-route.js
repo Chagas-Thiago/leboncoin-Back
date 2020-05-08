@@ -63,6 +63,7 @@ router.get("/offers/with-count", async (req, res) => {
     if (req.query.title) {
       filters.title = new RegExp(req.query.title, "i");
     }
+
     if (req.query.priceMin) {
       filters.price = { $gte: req.query.priceMin };
       if (req.query.priceMax) {
@@ -111,5 +112,18 @@ router.get("/offers/with-count", async (req, res) => {
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
+  //----------------------------------Route pour ID--------------------------------------
+  router.get("/offer/:id", async (req, res) => {
+    try {
+      const id = req.params.id;
+      const offers = await Offer.findOne({ _id: id }).populate({
+        path: "creator",
+        select: "account",
+      });
+      res.json(offers);
+    } catch (error) {
+      res.json({ message: error.message });
+    }
+  });
 });
 module.exports = router;
