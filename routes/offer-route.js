@@ -101,8 +101,8 @@ router.get("/offers/with-count", async (req, res) => {
         path: "creator",
         select: "account.username account.phone",
       })
-      .skip((page - 1) * 4)
-      .limit(4)
+      .skip((page - 1) * 3)
+      .limit(3)
       .sort(sort);
 
     res.json({
