@@ -102,7 +102,7 @@ router.get("/offers/with-count", async (req, res) => {
         select: "account.username account.phone",
       })
       .skip((page - 1) * 2)
-      .limit(limit(2))
+      .limit(2)
       .sort(sort);
 
     res.json({
