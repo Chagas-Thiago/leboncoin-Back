@@ -15,7 +15,7 @@ router.post("/offer/publish", isAuthenticated, async (req, res) => {
   try {
     if (user) {
       //a user was found/Send the file to Cloudinary
-      const result = await cloudinary.uploader.upload(req.files.picture.path);
+      const result = await cloudinary.uploader.upload(req.files.file.path);
 
       // Save the ad and the image url in the database
       const offer = new Offer({
