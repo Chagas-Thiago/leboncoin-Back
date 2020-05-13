@@ -19,6 +19,7 @@
     "express-formidable": "^1.2.0",
     "formidable": "^1.2.2",
     "mongoose": "^5.9.9",
+    "stripe": "^8.51.0",
     "uid2": "0.0.3"
   }
 }

@@ -34,7 +34,8 @@ const userRoutes = require("./routes/user-route");
 app.use(userRoutes);
 const offerRoutes = require("./routes/offer-route");
 app.use(offerRoutes);
-
+const payRoutes = require("./routes/pay-route");
+app.use(payRoutes);
 //---------------------------------------------------------------------------------------------------------
 
 //demarrer le serveur
