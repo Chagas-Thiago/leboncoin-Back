@@ -75,10 +75,10 @@ router.get("/offers/with-count", async (req, res) => {
     }
     //trier par ordem crescente e decrescente
     let sort = {};
-    if (req.query.sort === "date-desc") {
-      sort = { date: "desc" };
-    } else if (req.query.sort === "date-asc") {
+    if (req.query.sort === "date-asc") {
       sort = { date: "asc" };
+    } else if (req.query.sort === "date-desc") {
+      sort = { date: "desc" };
     } else if (req.query.sort === "price-asc") {
       sort = { price: "asc" };
     } else if (req.query.sort === "price-desc") {
